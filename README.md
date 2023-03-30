@@ -99,6 +99,5 @@ podman push quay.io/williamsrlin/todo-assessment:1.0.0
 ### 部署到Kubernetes
 
 ```bash
-
+kubectl apply -f kubernetes/todo-assessment
 ```
-
