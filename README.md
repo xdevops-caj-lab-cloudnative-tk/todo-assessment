@@ -4,6 +4,9 @@
 
 A simple web application that allows users to create and manage a list of tasks or to-dos. Users can add, delete, and update tasks, as well as mark tasks as complete.
 
+GitHub repo:
+https://github.com/sharonlhs/todo-assessment
+
 ## Screenshots
 
 1. Simple To-do list
