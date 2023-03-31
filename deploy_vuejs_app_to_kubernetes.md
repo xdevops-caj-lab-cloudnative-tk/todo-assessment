@@ -261,7 +261,7 @@ todo-assessment
 
 说明
 - base目录包含kustomization.yaml文件，该文件定义了所有基础资源的公共部分；并包含所有公共资源的YAML文件。
-- overlays目录包含kustomization.yaml文件，包含了动态生成ConfigMap。
+- overlays目录包含kustomization.yaml文件，包含了动态生成dev和test环境的ConfigMap。
 
 完整的YAML在`kubernetes/kustomize-manifest/todo-assessment`目录下。
 
