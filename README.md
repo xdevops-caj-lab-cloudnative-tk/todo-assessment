@@ -42,7 +42,6 @@ podman build -t todo-assessment:1.0.0 .
 ```bash
 podman run -d -p 8080:8080 \
   --rm --name todo-assessment \
-  -e VUE_APP_GREETING="Frontend" \
   todo-assessment:1.0.0
 ```
 
