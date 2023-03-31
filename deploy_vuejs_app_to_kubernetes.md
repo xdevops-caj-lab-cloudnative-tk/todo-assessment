@@ -263,6 +263,48 @@ todo-assessment
 - base目录包含kustomization.yaml文件，该文件定义了所有基础资源的公共部分；并包含所有公共资源的YAML文件。
 - overlays目录包含kustomization.yaml文件，包含了动态生成dev和test环境的ConfigMap。
 
+base目录下的kustomization.yaml文件：
+
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - deployment.yaml
+  - service.yaml
+  - route.yaml
+  - hpa.yaml
+```
+
+overlays/dev目录下的kustomization.yaml文件：
+
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+configMapGenerator:
+  - name: todo-assessment-config
+    literals:
+      - VUE_APP_GREETING="VueJS applicaiton on DEV environment"
+```
+
+overlays/test目录下的kustomization.yaml文件：
+
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+configMapGenerator:
+  - name: todo-assessment-config
+    literals:
+      - VUE_APP_GREETING="VueJS applicaiton on TEST environment"
+```
+
 完整的YAML在`kubernetes/kustomize-manifest/todo-assessment`目录下。
 
 #### 部署到dev环境
