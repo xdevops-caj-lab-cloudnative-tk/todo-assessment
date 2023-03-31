@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+configMapGenerator:
+  - name: todo-assessment-config
+    literals:
+      - VUE_APP_GREETING="VueJS applicaiton on TEST environment"

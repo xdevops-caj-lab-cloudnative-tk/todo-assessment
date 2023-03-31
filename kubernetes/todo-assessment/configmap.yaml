@@ -1,0 +1,6 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: todo-assessment-config
+data:
+  VUE_APP_GREETING: "VueJS applicaiton"

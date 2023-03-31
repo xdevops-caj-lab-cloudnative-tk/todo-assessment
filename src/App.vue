@@ -1,4 +1,5 @@
 <template>
+  <h1>Hello {{ greeting }}</h1>
   <div class="wrapper">
     <form @submit.prevent="addItem" autocomplete="off">
       <h1>Simple to-do list</h1>
@@ -34,11 +35,14 @@
 </template>
 
 <script>
+import Config from "./config.json";
+
 export default {
   data() {
     return {
       newItem: "", //item before adding into array
       items: [], //store items in array
+      greeting: Config.VUE_APP_GREETING // inject env variable
     };
   },
   computed: {
