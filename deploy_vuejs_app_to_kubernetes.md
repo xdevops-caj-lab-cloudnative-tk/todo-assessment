@@ -17,7 +17,7 @@ VueJS支持通过`.env`和`.env.[mode]`方式来定义默认的环境变量和�
 - https://cli.vuejs.org/guide/mode-and-env.html#environment-variables
 
 
-但是由于运行`npm run build`打包时，webpack会混淆和压缩(minify) 代码，导致无法在运行时从外部注入环境。
+但是由于运行`npm run build`打包时，webpack会混淆和压缩(minify) 代码，导致无法在运行时从外部注入环境变量。
 
 一种解决方案是对不同模式进行打包，比如开发环境打一个包，测试环境打另一个包，而生产环境再打另一个包。但是这种做法违背了“一次构建，多环境运行"的原则。
 
