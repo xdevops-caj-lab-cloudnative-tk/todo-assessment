@@ -17,9 +17,9 @@ VueJS支持通过`.env`和`.env.[mode]`方式来定义默认的环境变量和�
 - https://cli.vuejs.org/guide/mode-and-env.html#environment-variables
 
 
-但是由于运行`npm run build`打包时，webpack会混淆和压缩(minify) 代码，导致`.env`和`.env.[mode]`中的环境变量无法被正确的替换。
+但是由于运行`npm run build`打包时，webpack会混淆和压缩(minify) 代码，导致无法在运行时从外部注入环境。
 
-一种解决方案是对不同模式进行打包，比如开发环境打一个包，测试环境打另一个包，而生产环境再打另一个包。但是这种做法违背了“一次构建，多环境运行的原则”。
+一种解决方案是对不同模式进行打包，比如开发环境打一个包，测试环境打另一个包，而生产环境再打另一个包。但是这种做法违背了“一次构建，多环境运行"的原则。
 
 ### 外部化VueJS配置
 
@@ -196,7 +196,7 @@ podman run -d -p 8080:8080 \
   todo-assessment:1.0.5
 ```
 
-访问http://localhost:8080/，可以看到页面显示`Multi Stage Rootless`。
+访问<http://localhost:8080/>，可以看到页面显示`Multi Stage Rootless`。
 
 ### 推送到镜像仓库
 
