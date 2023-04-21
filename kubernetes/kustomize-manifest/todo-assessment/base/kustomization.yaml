@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
-  - route.yaml
+  - ingress.yaml
   - hpa.yaml

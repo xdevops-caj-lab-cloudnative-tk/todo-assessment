@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: todo-assessment
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: todo-assessment.user1.apps.taikang1.local
+    http:
+      paths:
+      - backend:
+          service:
+            name: todo-assessment
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
